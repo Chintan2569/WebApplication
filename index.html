@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="webApplication" ng-controller="webController">
+<table id="dataTable" class="tablesorter">
+	<thead>
+		<tr>
+			<th onclick="sortTable(0)" class="header headerSortDown">UserID</th>
+			<th onclick="sortTable(1)" class="header headerSortDown">Title</th>
+			<th onclick="sortTable(2)" class="header headerSortDown">Body</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		<tr ng-repeat ="rows in  data" ng-class="{'even': $index%2 === 0, 'odd': $index%2 !== 0}">
+			<td> {{rows.userId}}</td>
+			<td> {{rows.title}}</td>
+			<td> {{rows.body}}</td>			
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<script type="text/javascript" src="js/app.js"></script>
+<script src="js/sortable.js"></script>
+
+</body>
+</html>
+
